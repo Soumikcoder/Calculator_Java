@@ -1,4 +1,4 @@
-##✨ ✨ ✨ Java Swing Calculator ✨ ✨ ✨
+✨ ✨ ✨ Java Swing Calculator ✨ ✨ ✨
 
 **Hey there, fellow code enthusiast!**
 
