@@ -11,7 +11,7 @@ This isn't your average clunky calculator. This is a **sleek, responsive, and cu
 * **Basic operations:** Addition, subtraction, multiplication, division – the classics, polished and precise. ➕➖✖➗
 * **Clean code:** Dive into the source code – it's well-organized and commented, perfect for learning or hacking on.
 
-### How to Summon This Magic ‍♀️
+### How to Summon This Magic ‍
 
 1. **Grab the code:** Clone the repository or download the source files.
 2. **Open the command line:** Navigate to the project directory.

@@ -28,13 +28,17 @@ public class MyButton extends JButton implements ActionListener
 				break;
 			case "Del":
 				String s=box.getText();
-				box.setText(s.substring(0,s.length()-1));
+				if (s.length()>0)
+					box.setText(s.substring(0,s.length()-1));
 				break;
 			case "+":
 				if(box.getText().length()!=0){
-					num[0]=Double.parseDouble(box.getText());
+					try{
+						num[0]=Double.parseDouble(box.getText());
+						box.setText("");
+					}
+					catch(NumberFormatException exception){box.setText(this.getText());}
 					num[1]=1.0;
-					box.setText("");
 				}
 				else{
 					box.setText(this.getText());
@@ -43,9 +47,12 @@ public class MyButton extends JButton implements ActionListener
 
 			case "-":
 				if(box.getText().length()!=0){
-					num[0]=Double.parseDouble(box.getText());
+					try{
+						num[0]=Double.parseDouble(box.getText());
+						box.setText("");
+					}
+					catch(NumberFormatException exception){box.setText(this.getText());}
 					num[1]=2.0;
-					box.setText("");
 				}
 				else{
 					box.setText(this.getText());
@@ -58,9 +65,6 @@ public class MyButton extends JButton implements ActionListener
 					num[1]=3.0;
 					box.setText("");
 				}
-				else{
-					box.setText(this.getText());
-				}
 				break;
 
 			case "/":
@@ -68,30 +72,32 @@ public class MyButton extends JButton implements ActionListener
 					num[0]=Double.parseDouble(box.getText());
 					num[1]=4.0;
 					box.setText("");
-				}
-				else{
-					box.setText(this.getText());
+
 				}
 				break;
 
 			case "=":
-				num[2]=Double.parseDouble(box.getText());
-				if(num[1]==1.0){
-					num[0]=num[0]+num[2];
-				}
-				else if(num[1]==2.0){
-					num[0]=num[0]-num[2];
-				}
-				else if(num[1]==3.0){
-					num[0]=num[0]*num[2];
-				}
-				else{
-					num[0]=num[0]/num[2];
-				}
-				box.setText(String.valueOf(num[0]));
+				try{
+					if(num[1]!=0){
+						num[2]=Double.parseDouble(box.getText());
+					if(num[1]==1.0){
+						num[0]=num[0]+num[2];
+					}
+					else if(num[1]==2.0){
+						num[0]=num[0]-num[2];
+					}
+					else if(num[1]==3.0){
+						num[0]=num[0]*num[2];
+					}
+					else{
+						num[0]=num[0]/num[2];
+					}
+					box.setText(String.valueOf(num[0]));
+					}
+				}catch(NullPointerException err){}
 				break;
 			default:
-			box.setText(box.getText()+this.getText());
+				box.setText(box.getText()+this.getText());
 			}
 		}
 	}
