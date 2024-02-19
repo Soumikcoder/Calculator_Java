@@ -3,7 +3,7 @@
 **Hey there, fellow code enthusiast!**
 
 Introducing your new weapon of mass calculation: a Java Swing calculator built with love and pixels.
-
+![Calculator Firstlook](https://github.com/Soumikcoder/Calculator_Java/blob/master/calculator.mp4)
 This isn't your average clunky calculator. This is a **sleek, responsive, and customizable** powerhouse that'll turn number crunching into a joyride.
 
 ### Peek Inside the Toolbox ️
